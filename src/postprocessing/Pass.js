@@ -1,3 +1,5 @@
+import { OrthographicCamera, PlaneBufferGeometry, Mesh } from "three";
+
 var Pass = function() {
   // if set to true, the pass is processed by the composer
   this.enabled = true;
@@ -19,5 +21,32 @@ Object.assign(Pass.prototype, {
     console.error("THREE.Pass: .render() must be implemented in derived pass.");
   }
 });
+
+Pass.FullScreenQuad = (function() {
+  var camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
+  var geometry = new PlaneBufferGeometry(2, 2);
+
+  var FullScreenQuad = function(material) {
+    this._mesh = new Mesh(geometry, material);
+  };
+
+  Object.defineProperty(FullScreenQuad.prototype, "material", {
+    get: function() {
+      return this._mesh.material;
+    },
+
+    set: function(value) {
+      this._mesh.material = value;
+    }
+  });
+
+  Object.assign(FullScreenQuad.prototype, {
+    render: function(renderer) {
+      renderer.render(this._mesh, camera);
+    }
+  });
+
+  return FullScreenQuad;
+})();
 
 export { Pass };
