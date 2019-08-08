@@ -5,7 +5,23 @@ import Scene from "./Scene";
 import Header from "./Header";
 import { Provider } from "react-redux";
 import store from "./redux";
-import AboutMe from './AboutMe';
+import AboutMe from "./AboutMe";
+import github from "./assets/github.png";
+import styled from "styled-components";
+
+const Link = styled.a`
+  text-decoration: none;
+`;
+
+const GitHub = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  width: 24px;
+  height: 24px;
+  padding: 1.3em;
+`;
 
 const App = () => {
   const [realMouse, setRealMouse] = useState([0, 0]);
@@ -44,6 +60,9 @@ const App = () => {
       >
         <Header />
         <AboutMe />
+        <Link href="https://github.com/gonzarodriguezt" target="_blank">
+          <GitHub src={github} />
+        </Link>
       </div>
     </Provider>
   );
