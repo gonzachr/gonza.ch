@@ -25,7 +25,6 @@ const Logo = styled.span`
 
 const Link = styled.a`
   padding: 1.5rem;
-  margin-right: 1em;
   cursor: pointer;
   text-decoration: none;
 `;
@@ -36,7 +35,7 @@ const Item = styled.span`
 `;
 
 const Header = ({ setView, currentView }) => {
-  const { VIEW_ABOUT_ME, VIEW_CONTACT, VIEW_HOME } = Views;
+  const { VIEW_ABOUT_ME, VIEW_HOME } = Views;
 
   return (
     <Nav>
