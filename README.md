@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/59dcdf56-b8db-47b6-8857-1726816b530e/deploy-status)](https://app.netlify.com/sites/mystifying-leavitt-7c9555/deploys)
+
 [gonza.ch](https://gonza.ch/)
 
 ### credits
