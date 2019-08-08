@@ -23,6 +23,13 @@ const Logo = styled.span`
   cursor: pointer;
 `;
 
+const Link = styled.a`
+  padding: 1.5rem;
+  margin-right: 1em;
+  cursor: pointer;
+  text-decoration: none;
+`;
+
 const Item = styled.span`
   padding: 1.5rem;
   cursor: pointer;
@@ -43,9 +50,7 @@ const Header = ({ setView, currentView }) => {
         <Item onClick={() => setView({ currentView, newView: VIEW_ABOUT_ME })}>
           about me
         </Item>
-        <Item onClick={() => setView({ currentView, newView: VIEW_CONTACT })}>
-          contact
-        </Item>
+        <Link href="mailto:someone@yoursite.com">contact</Link>
       </div>
     </Nav>
   );
