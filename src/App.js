@@ -1,25 +1,51 @@
-import React, { useCallback } from "react";
-import { Canvas } from "react-three-fiber";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import { useSpring } from "react-spring/three";
-import Box from "./Box";
+import { Math as ThreeMath } from "three";
+import Scene from "./Scene";
+import Header from "./Header";
+import { Provider } from "react-redux";
+import store from "./redux";
+import AboutMe from './AboutMe';
 
 const App = () => {
-  const [{ mouse }, set] = useSpring(() => ({ mouse: [0, 0] }));
+  const [realMouse, setRealMouse] = useState([0, 0]);
+  const scroll = useRef();
+  const [{ mouse, top }, set] = useSpring(() => ({
+    mouse: [0, 0],
+    top: 0
+  }));
   const onMouseMove = useCallback(
     ({ clientX: x, clientY: y }) => {
+      setRealMouse([x - window.innerWidth / 2, y - window.innerHeight / 2]);
       set({ mouse: [x - window.innerWidth / 2, y - window.innerHeight / 2] });
     },
     [set]
   );
+  const { opacity } = useSpring({
+    from: { opacity: 0 },
+    opacity: 1
+  });
+
+  const onScroll = ({ target: { scrollTop } }) => {
+    set({ top: scrollTop });
+  };
+  // const { factor } = useSpring({
+  //   factor: toggle ? 1 : 0
+  // });
 
   return (
-    <Canvas className="canvas" onMouseMove={onMouseMove}>
-      <directionalLight color={0xffffff} intensity={1} position={[-1, 2, 4]} />
-      <spotLight color={0xffffff} position={[10, 5, 0]} />
-      <Box mouse={mouse} position={{ y: 0, x: -3 }} color={0x161429} />
-      <Box mouse={mouse} position={{ y: 0, x: 0 }} color={0xcd979c} />
-      <Box mouse={mouse} position={{ y: 0, x: 3 }} color={0xddbabd} />
-    </Canvas>
+    <Provider store={store}>
+      <Scene top={top} mouse={realMouse} />
+      <div
+        className="container"
+        onScroll={onScroll}
+        ref={scroll}
+        onMouseMove={onMouseMove}
+      >
+        <Header />
+        <AboutMe />
+      </div>
+    </Provider>
   );
 };
 
