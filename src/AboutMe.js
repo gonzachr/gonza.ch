@@ -17,36 +17,7 @@ const AboutMe = ({ currentView }) => {
 
   return (
     <animated.div className="about-me" style={{ opacity }}>
-      <FrontLine>
-        Hola! I'm Gonzalo Rodríguez, a 20 years old self-taught Frontend
-        Developer.
-      </FrontLine>
-      <div>
-        Since my first game in Visual Basic (don't judge me) i never stop using
-        and learning from my computer, i may found a passion. Regards my
-        professional career, i have experience building{" "}
-        <a
-          target="blank"
-          href="https://github.com/FundacionParaguaya/stoplight-web"
-        >
-          complex applications
-        </a>{" "}
-        , with a sense on{" "}
-        <a
-          target="blank"
-          href="https://github.com/FundacionParaguaya/stoplight-web/pull/406"
-        >
-          engineering intuition
-        </a>
-        , and somewhat good{" "}
-        <a
-          target="blank"
-          href="https://github.com/FundacionParaguaya/stoplight-web/pull/430"
-        >
-          communication skills
-        </a>
-        .
-      </div>
+      <FrontLine>In Progress..</FrontLine>
     </animated.div>
   );
 };
