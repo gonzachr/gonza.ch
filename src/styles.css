@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Slabo+13px&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap");
 
 body {
   margin: 0;
-  font-family: "Slabo 13px", serif;
+  font-family: "Lexend Deca", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000000;
   overscroll-behavior-y: none;
+  user-select: none;
+}
+
+p {
+  margin: 0;
 }
 
 a {
@@ -47,12 +53,11 @@ code {
 
 .about-me {
   font-size: 16;
-  text-align: center;
   color: #fff;
-  width: 50%;
+  width: 65%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 20vh;
+  box-sizing: border-box;
   flex-direction: column;
-  padding-right: 8rem;
 }
