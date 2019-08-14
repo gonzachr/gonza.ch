@@ -12,22 +12,33 @@ export default [
   {
     key: "Content",
     text: {
-      __html: `I'm a Frontend Developer from Paraguay (South America), after many years writing code, i consider myself a skilled JavaScript developer with a deep understanding of the latest internet technologies, a keen 
+      __html: `I'm a skilled JavaScript developer with a deep understanding of the latest internet technologies, a keen 
     <a
       target="blank"
       
       href="https://github.com/FundacionParaguaya/stoplight-web/pull/406"
     >
       engineering intuition
-    </a>
-    , and outstanding 
+    </a>, and outstanding 
     <a
       target="blank"
       href="https://github.com/FundacionParaguaya/stoplight-web/pull/430"
       
     >
     communication skills.
-    </a> Aditionally i have experience building
+    </a>`
+    },
+    css: {
+      fontSize: "1em",
+      fontWeight: 300,
+      lineHeight: 2,
+      marginBottom: "1em"
+    }
+  },
+  {
+    key: "Aditionally",
+    text: {
+      __html: `Aditionally, i have experience building
     <a
       target="blank"
       href="https://github.com/FundacionParaguaya/stoplight-web/graphs/contributors"
@@ -38,16 +49,16 @@ export default [
       target="blank"
       href="https://github.com/drcmda/react-three-fiber/pull/157"
     >
-    JavaScript and React 
+    JavaScript and React
     </a>
-    and 
+     and 
     <a
       target="blank"
       href="https://github.com/gonzarodriguezt/todoist-clone/tree/master/src/redux"
     >
     Redux
     </a>
-    as a Bonus, also some experience 
+     just as a bonus. I also came to have some experience 
     <a
       target="blank"
       href="https://github.com/gonzarodriguezt/todoist-clone/tree/master/src/__tests__"
@@ -67,6 +78,32 @@ export default [
       fontSize: "1em",
       fontWeight: 300,
       lineHeight: 2,
+      marginBottom: "1em"
+    }
+  },
+  {
+    key: "Coincidentally",
+    text: {
+      __html: `I coincidentally count with experience working in a 
+      <a
+      target="blank"
+      href="https://github.com/FundacionParaguaya"
+      >
+      remote team
+      </a> 
+      and fluency writing and speaking in English. With no intention to leave behind my 
+      <a
+        target="blank"
+        href="https://github.com/gonzarodriguezt/gonza.ch/graphs/contributors"
+      >
+      proven ability
+      </a> 
+      to work autonomously and stay self-motivated.`
+    },
+    css: {
+      fontSize: "1em",
+      fontWeight: 300,
+      lineHeight: 2,
       marginBottom: "2em"
     }
   },
@@ -80,21 +117,21 @@ export default [
     text: {
       __html: `✅ <a
       target="blank"
-      href="https://github.com/gonzarodriguezt/todoist-clone"
+      href="https://todoist.gonza.ch/"
     >
     Todoist Clone
     <br />
     </a>
     ⚔️ <a
       target="blank"
-      href="https://github.com/gonzarodriguezt/github-battle"
+      href="https://battle.gonza.ch"
     >
     GitHub Battle
     </a>
     <br /> 
     🇵🇾 <a
     target="blank"
-    href="https://github.com/gonzarodriguezt/assistan-ces"
+    href="http://assistan-ces.surge.sh/Q2F0ZXVyYQ==/MjktMDQtMjAxOQ=="
     >
     Assistance App
     </a>
