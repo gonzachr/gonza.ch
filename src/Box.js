@@ -1,9 +1,16 @@
 import React from "react";
 import { Vector3 } from "three";
+import { a, useSpring } from "react-spring/three";
+import { VIEW_ABOUT_ME } from "./redux/actions";
 
 const Box = ({
-  vertices = [[-1, -1, 0], [0, 1, 0], [1, -1, 0], [-1, -1, 0]]
+  vertices = [[-1.5, -1, 0], [0, 2, 0], [1.5, -1, 0], [-1.5, -1, 0]],
+  currentView
 }) => {
+  const { opacity } = useSpring({
+    opacity: currentView === VIEW_ABOUT_ME ? 0 : 1
+  });
+
   return (
     <group>
       <line>
@@ -12,7 +19,12 @@ const Box = ({
           vertices={vertices.map(v => new Vector3(...v))}
           onUpdate={self => (self.verticesNeedUpdate = true)}
         />
-        <lineBasicMaterial attach="material" color="white" />
+        <a.lineBasicMaterial
+          attach="material"
+          transparent
+          opacity={opacity}
+          color="white"
+        />
       </line>
     </group>
   );

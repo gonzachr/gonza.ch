@@ -38,6 +38,7 @@ const Scene = ({
           setSpringRef={setSpringRef}
         />
       </Suspense>
+      {!loadingStatus && <Box currentView={currentView} />}
     </Canvas>
   );
 };
