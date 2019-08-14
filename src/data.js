@@ -70,21 +70,41 @@ export default [
       marginBottom: "2em"
     }
   },
-  // {
-  //   key: "Interests",
-  //   text: { __html: "Current interests" },
-  //   css: { fontSize: "1.2em", fontWeight: 600, marginBottom: "1.5em" }
-  // },
-  // {
-  //   key: "Current Interests",
-  //   text: {
-  //     __html: `I'm now currently learning`
-  //   },
-  //   css: {
-  //     fontSize: "1em",
-  //     fontWeight: 300,
-  //     lineHeight: 2,
-  //     marginBottom: "2em"
-  //   }
-  // }
+  {
+    key: "Projects",
+    text: { __html: "Some Projects" },
+    css: { fontSize: "1.2em", fontWeight: 600, marginBottom: "1.5em" }
+  },
+  {
+    key: "Current Interests",
+    text: {
+      __html: `✅ <a
+      target="blank"
+      href="https://github.com/gonzarodriguezt/todoist-clone"
+    >
+    Todoist Clone
+    <br />
+    </a>
+    ⚔️ <a
+      target="blank"
+      href="https://github.com/gonzarodriguezt/github-battle"
+    >
+    GitHub Battle
+    </a>
+    <br /> 
+    🇵🇾 <a
+    target="blank"
+    href="https://github.com/gonzarodriguezt/assistan-ces"
+    >
+    Assistance App
+    </a>
+    `
+    },
+    css: {
+      fontSize: "1em",
+      fontWeight: 300,
+      lineHeight: 2,
+      marginBottom: "2em"
+    }
+  }
 ];
