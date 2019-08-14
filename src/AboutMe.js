@@ -28,7 +28,7 @@ const AboutMe = ({ currentView, currentRef, setTransRef }) => {
   );
 
   useEffect(() => {
-    if (currentRef !== transRef) {
+    if (currentRef.transRef !== transRef) {
       setTransRef(transRef);
     }
   });
