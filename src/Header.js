@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { setView, Views } from "./redux/actions";
@@ -27,11 +27,13 @@ const Link = styled.a`
   padding: 1.5rem;
   cursor: pointer;
   text-decoration: none;
+  text-transform: uppercase;
 `;
 
 const Item = styled.span`
   padding: 1.5rem;
   cursor: pointer;
+  text-transform: uppercase;
 `;
 
 const Header = ({ setView, currentView }) => {
@@ -49,13 +51,13 @@ const Header = ({ setView, currentView }) => {
         <Item onClick={() => setView({ currentView, newView: VIEW_ABOUT_ME })}>
           about me
         </Item>
-        <Link href="mailto:someone@yoursite.com">contact</Link>
+        <Link href="mailto:gonzarodriguezt@icloud.com">contact</Link>
       </div>
     </Nav>
   );
 };
 
-const mapStateToProps = currentView => ({ currentView });
+const mapStateToProps = ({currentView}) => ({ currentView });
 const mapDispatchToProps = { setView };
 
 export default connect(

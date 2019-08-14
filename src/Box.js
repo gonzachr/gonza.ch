@@ -1,18 +1,20 @@
 import React from "react";
-import { a } from "react-spring/three";
-import { Math as ThreeMath } from "three";
+import { Vector3 } from "three";
+// import { Math as ThreeMath } from "three";
 
-const Box = ({ mouse, position: { x, y }, color }) => {
-  const timesX = ThreeMath.mapLinear(x, 0, 6, 0, window.innerWidth / 2);
-  const width = window.innerWidth / 2;
-  const height = window.innerHeight / 2;
-
+const Box = ({
+  vertices = [[-1, -1, 0], [0, 1, 0], [1, -1, 0], [-1, -1, 0]]
+}) => {
   return (
     <group>
-      <a.mesh position={[x, y, 0]}>
-        <boxGeometry attach="geometry" />
-        <meshPhongMaterial attach="material" color={color} />
-      </a.mesh>
+      <line>
+        <geometry
+          attach="geometry"
+          vertices={vertices.map(v => new Vector3(...v))}
+          onUpdate={self => (self.verticesNeedUpdate = true)}
+        />
+        <lineBasicMaterial attach="material" color="white" />
+      </line>
     </group>
   );
 };
