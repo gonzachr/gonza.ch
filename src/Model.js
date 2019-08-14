@@ -33,25 +33,11 @@ function Model({
   const [positionX, setPositionX] = useState(0);
   const file = "scene.gltf";
   const tempRef = useRef();
-  // const [piTimes, setPiTimes] = useState(0);
-  // const x = position[0];
-  // const [rotationX, setRotationX] = useState(-2.5);
-  // const primitive = useRef();
-  // const timesX = ThreeMath.mapLinear(x, 0, 6, 0, window.innerWidth / 2);
-  // let s = 0;
   const width = window.innerWidth / 2;
   const height = window.innerHeight / 2;
   const { scene } = resource.read(file);
   let theta = 1;
   const { VIEW_ABOUT_ME } = Views;
-
-  // const mouseMove = mouse.interpolate((x, y) => {
-  //   const rotX = ThreeMath.mapLinear(x, 0, width, -3, -2);
-  //   const rotY = ThreeMath.mapLinear(y, 0, height, 0, 0.5);
-
-  //   return [rotY, rotX, 0];
-  // });
-
   const springRef = useRef();
   const { rotation, position, opacity, ...rest } = useSpring({
     ref: springRef,
@@ -67,9 +53,6 @@ function Model({
         currentView === VIEW_ABOUT_ME ? [-2, positionX, 2] : [0, positionX, 0],
       rotation: currentView === VIEW_ABOUT_ME ? [0, -2.5, 0] : currentRotation
     }
-    // pos: currentView === VIEW_ABOUT_ME ? [-2, positionX, 2] : [0, positionX, 0],
-    // rotation:
-    //   currentView === VIEW_ABOUT_ME ? [0, rotationX, 0] : currentRotation
   });
 
   useEffect(() => {
@@ -88,9 +71,6 @@ function Model({
   );
 
   useRender(() => {
-    // s += 1;
-    // let rounded = piTimes !== 0 ? s / (piTimes + 1) - 360 : s / (piTimes + 1);
-    // let currentRotation = ThreeMath.degToRad(rounded);
     const r = ThreeMath.mapLinear(
       Math.sin(ThreeMath.degToRad((theta += 2))),
       -1,
@@ -98,9 +78,6 @@ function Model({
       -0.1,
       0.1
     );
-    // primitive.current.rotation.set(0, s, 0);
-    // primitive.current.position.set(0, 0.5 + r, 0);
-    // setRotationX(currentRotation);
     setPositionX(0.5 + r);
   });
 
@@ -114,14 +91,6 @@ function Model({
       position={position}
       transparent
       opacity={opacity}
-      // ref={primitive}
-      // position={top.interpolate(top => {
-      //   const y = ThreeMath.mapLinear(top, 0, window.innerHeight, 0, -2);
-      //   const z = ThreeMath.mapLinear(top, 0, window.innerHeight, 0, 2);
-      //   setPositionY(y);
-      //   setPositionZ(z);
-      //   return [y < -2 ? -2 : y, positionX, z > 2 ? 2 : z];
-      // })}
     />
   );
 }

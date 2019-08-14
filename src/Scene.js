@@ -38,26 +38,6 @@ const Scene = ({
           setSpringRef={setSpringRef}
         />
       </Suspense>
-      {/* <mesh position={[0, 0, -5]}>
-        <planeGeometry attach="geometry" args={[30, 20, 0.1]} />
-        <meshBasicMaterial attach="material" color="#000000" />
-      </mesh> */}
-      {/* <Text opacity={1} position={[-2, 0, 0]}>
-        hello
-      </Text>
-      <Text opacity={1} position={[2, -2, 0]}>
-        Привет
-      </Text>
-      <Text opacity={1} position={[-4, 2, 0]}>
-        hola
-      </Text>
-      <Text opacity={1} position={[-1.5, 2, 0]}>
-        Привет
-      </Text>
-      <Text opacity={1} position={[-1.5, 2, 0]}>
-        hello
-      </Text> */}
-      {/* <Stars position={[0, 0, 0]} /> */}
     </Canvas>
   );
 };

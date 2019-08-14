@@ -1,6 +1,5 @@
 import React from "react";
 import { Vector3 } from "three";
-// import { Math as ThreeMath } from "three";
 
 const Box = ({
   vertices = [[-1, -1, 0], [0, 1, 0], [1, -1, 0], [-1, -1, 0]]

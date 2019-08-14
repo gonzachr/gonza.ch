@@ -26,23 +26,12 @@ const AboutMe = ({ currentView, currentRef, setTransRef }) => {
       leave: { opacity: 0, transform: "translateY(50%)" }
     }
   );
-  // const refTemp = useRef();
 
   useEffect(() => {
     if (currentRef !== transRef) {
       setTransRef(transRef);
     }
   });
-
-  // useChain(
-  //   currentView === VIEW_ABOUT_ME
-  //     ? [currentRef.springRef ? currentRef.springRef : refTemp, transRef]
-  //     : [
-  //         (transRef: refTemp),
-  //         currentRef.springRef ? currentRef.springRef : refTemp
-  //       ],
-  //   [0, currentView === VIEW_ABOUT_ME ? 0.5 : 1]
-  // );
 
   return (
     <div className="about-me">
@@ -51,39 +40,7 @@ const AboutMe = ({ currentView, currentRef, setTransRef }) => {
           key={key}
           style={{ ...props, ...item.css }}
           dangerouslySetInnerHTML={item.text}
-        >
-          {/* {item.text} */}
-          {/* <FrontLine>
-            Hola! I'm Gonzalo Rodríguez, a 20 years old self-taught Frontend
-            Developer.
-          </FrontLine>
-          <div>
-            Since my first game in Visual Basic (don't judge me) i never stop
-            using and learning from my computer, i may found a passion. Regards
-            my professional career, i have experience building{" "}
-            <a
-              target="blank"
-              href="https://github.com/FundacionParaguaya/stoplight-web"
-            >
-              complex applications
-            </a>{" "}
-            , with a sense on{" "}
-            <a
-              target="blank"
-              href="https://github.com/FundacionParaguaya/stoplight-web/pull/406"
-            >
-              engineering intuition
-            </a>
-            , and somewhat good{" "}
-            <a
-              target="blank"
-              href="https://github.com/FundacionParaguaya/stoplight-web/pull/430"
-            >
-              communication skills
-            </a>
-            .
-          </div> */}
-        </animated.p>
+        />
       ))}
     </div>
   );

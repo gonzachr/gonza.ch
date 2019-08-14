@@ -43,46 +43,9 @@ const GithubLink = () => (
 
 const App = ({ loadingStatus }) => {
   const [realMouse, setRealMouse] = useState([0, 0]);
-  // const [{ mouse, top }, set] = useSpring(() => ({
-  //   mouse: [0, 0],
-  //   top: 0
-  // }));
   const onMouseMove = useCallback(({ clientX: x, clientY: y }) => {
     setRealMouse([x - window.innerWidth / 2, y - window.innerHeight / 2]);
-    // set({ mouse: [x - window.innerWidth / 2, y - window.innerHeight / 2] });
   }, []);
-  // const { opacity } = useSpring({
-  //   from: { opacity: 0 },
-  //   opacity: 1
-  // });
-
-  // const onScroll = ({ target: { scrollTop } }) => {
-  //   set({ top: scrollTop });
-  // };
-  // const { factor } = useSpring({
-  //   factor: toggle ? 1 : 0
-  // });
-
-  // const items = [
-  //   { name: "header", jsx: <Header /> },
-  //   { name: "about me", jsx: <AboutMe /> },
-  //   {
-  //     name: "github",
-  //     jsx: <GithubLink />
-  //   }
-  // ];
-
-  // const transitions = useTransition(
-  //   loadingStatus ? [] : items,
-  //   item => item.name,
-  //   {
-  //     unique: true,
-  //     trail: 400 / items.length,
-  //     from: { opacity: 0, transform: "translateY(50%)" },
-  //     enter: { opacity: 1, transform: "translateY(0%)" },
-  //     leave: { opacity: 0, transform: "translateY(50%)" }
-  //   }
-  // );
 
   return (
     <>

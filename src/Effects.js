@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useThree, useRender } from "react-three-fiber";
-import { a, useSpring } from "react-spring/three";
+import { a } from "react-spring/three";
 
 const Effects = React.memo(({ loadingStatus, factor }) => {
   const pixelRatio = window.devicePixelRatio;
@@ -16,10 +16,6 @@ const Effects = React.memo(({ loadingStatus, factor }) => {
   useRender(() => {
     return composer.current.render();
   }, true);
-
-  // const factor = useSpring({
-  //   factor: loadingStatus ? 1 : 0
-  // });
 
   return (
     <effectComposer ref={composer} args={[gl]}>
