@@ -4,7 +4,7 @@ import { a, useSpring } from "react-spring/three";
 import { VIEW_ABOUT_ME } from "./redux/actions";
 
 const Box = ({
-  vertices = [[-1.5, -1, 0], [0, 2, 0], [1.5, -1, 0], [-1.5, -1, 0]],
+  vertices = [[-1.5, -1, -1], [0, 2, -1], [1.5, -1, -1], [-1.5, -1, -1]],
   currentView
 }) => {
   const { opacity } = useSpring({
