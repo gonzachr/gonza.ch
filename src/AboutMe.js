@@ -7,9 +7,10 @@ import items from "./data";
 
 const AboutMe = () => {
   const dispatch = useDispatch();
+  const currentView = useSelector(state => state.currentView);
   const transRef = useRef();
   const transitions = useTransition(
-    useSelector(state => state.currentView) === VIEW_ABOUT_ME ? items : [],
+    currentView === VIEW_ABOUT_ME ? items : [],
     item => item.key,
     {
       ref: transRef,

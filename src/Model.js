@@ -37,6 +37,8 @@ function Model({
   let theta = 1;
   const { VIEW_ABOUT_ME } = Views;
   const springRef = useRef();
+  const aboutMe = currentView === VIEW_ABOUT_ME;
+
   const { rotation, position, opacity, ...rest } = useSpring({
     ref: springRef,
     config: config.gentle,
@@ -47,19 +49,17 @@ function Model({
     },
     to: {
       opacity: 1,
-      position:
-        currentView === VIEW_ABOUT_ME ? [-2, positionX, 2] : [0, positionX, 0],
-      rotation:
-        currentView === VIEW_ABOUT_ME ? [420, 0, 0] : [...mouse.current, 0]
+      position: aboutMe ? [-2, positionX, 2] : [0, positionX, 0],
+      rotation: aboutMe ? [420, 0, 0] : [...mouse.current, 0]
     }
   });
 
   const ref = currentRef.transRef ? currentRef.transRef : tempRef;
 
-  useChain(
-    currentView === VIEW_ABOUT_ME ? [springRef, ref] : [ref, springRef],
-    [0, currentView === VIEW_ABOUT_ME ? 0.5 : 1]
-  );
+  useChain(aboutMe ? [springRef, ref] : [ref, springRef], [
+    0,
+    aboutMe ? 0.5 : 1
+  ]);
 
   useRender(() => {
     const r = ThreeMath.mapLinear(
