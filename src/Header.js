@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { setView, Views } from "./redux/actions";
+import { useDispatch } from "react-redux";
+import { SET_VIEW, VIEW_ABOUT_ME, VIEW_HOME } from "./redux/actions";
 
 const Nav = styled.div`
   width: 100%;
@@ -36,31 +36,25 @@ const Item = styled.span`
   text-transform: uppercase;
 `;
 
-const Header = ({ setView, currentView }) => {
-  const { VIEW_ABOUT_ME, VIEW_HOME } = Views;
+const Header = React.memo(({ setView }) => {
+  const dispatch = useDispatch();
 
   return (
     <Nav>
       <Logo
-        onClick={() => setView({ currentView, newView: VIEW_HOME })}
+        onClick={() => dispatch({ type: SET_VIEW, payload: VIEW_HOME })}
         className="logo"
       >
         gr
       </Logo>
       <div>
-        <Item onClick={() => setView({ currentView, newView: VIEW_ABOUT_ME })}>
+        <Item onClick={() => dispatch({ type: SET_VIEW, view: VIEW_ABOUT_ME })}>
           about me
         </Item>
         <Link href="mailto:gonzarodriguezt@icloud.com">contact</Link>
       </div>
     </Nav>
   );
-};
+});
 
-const mapStateToProps = ({currentView}) => ({ currentView });
-const mapDispatchToProps = { setView };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Header);
+export default Header;

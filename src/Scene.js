@@ -10,15 +10,13 @@ import { RenderPass } from "./postprocessing/RenderPass";
 import { GlitchPass } from "./postprocessing/GlitchPass";
 import { FilmPass } from "./postprocessing/FilmPass";
 import Model from "./Model";
-import { setSpringRef } from "./redux/actions";
 
 applySpring({ EffectComposer, GlitchPass, RenderPass, FilmPass });
 extend({ EffectComposer, GlitchPass, RenderPass, FilmPass });
 
 const Scene = ({
-  mouse,
   factor,
-  top,
+  mouse,
   currentRef,
   currentView,
   loadingStatus,
@@ -31,7 +29,6 @@ const Scene = ({
       <Effects loadingStatus={loadingStatus} factor={factor} />
       <Suspense fallback={<Box />}>
         <Model
-          top={top}
           mouse={mouse}
           currentView={currentView}
           currentRef={currentRef}
@@ -48,9 +45,5 @@ const mapStateToProps = ({ currentView, currentRef, loadingStatus }) => ({
   currentView,
   loadingStatus
 });
-const mapDispatchToProps = { setSpringRef };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Scene);
+export default connect(mapStateToProps)(Scene);

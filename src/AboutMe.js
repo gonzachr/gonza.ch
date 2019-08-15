@@ -1,21 +1,15 @@
-import React, { useRef, useEffect, useState } from "react";
-import { animated, useTransition, useChain } from "react-spring";
+import React, { useRef, useEffect } from "react";
+import { animated, useTransition } from "react-spring";
 import { VIEW_ABOUT_ME } from "./redux/actions";
-import { connect } from "react-redux";
-import styled from "styled-components";
-import { setTransRef } from "./redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { SET_TRANS_REF } from "./redux/actions";
 import items from "./data";
 
-const FrontLine = styled.div`
-  font-weight: 600;
-  font-size: 18;
-  margin-bottom: 2rem;
-`;
-
-const AboutMe = ({ currentView, currentRef, setTransRef }) => {
+const AboutMe = () => {
+  const dispatch = useDispatch();
   const transRef = useRef();
   const transitions = useTransition(
-    currentView === VIEW_ABOUT_ME ? items : [],
+    useSelector(state => state.currentView) === VIEW_ABOUT_ME ? items : [],
     item => item.key,
     {
       ref: transRef,
@@ -28,10 +22,8 @@ const AboutMe = ({ currentView, currentRef, setTransRef }) => {
   );
 
   useEffect(() => {
-    if (currentRef.transRef !== transRef) {
-      setTransRef(transRef);
-    }
-  });
+    dispatch({ type: SET_TRANS_REF, ref: transRef });
+  }, [transRef, dispatch]);
 
   return (
     <div className="about-me">
@@ -46,13 +38,4 @@ const AboutMe = ({ currentView, currentRef, setTransRef }) => {
   );
 };
 
-const mapStateToProps = ({ currentView, currentRef }) => ({
-  currentView,
-  currentRef
-});
-const mapDispatchToProps = { setTransRef };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AboutMe);
+export default AboutMe;
