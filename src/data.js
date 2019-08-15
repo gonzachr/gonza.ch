@@ -23,10 +23,10 @@ export default [
     <a
       target="blank"
       href="https://github.com/FundacionParaguaya/stoplight-web/pull/430"
-      
     >
     communication skills.
-    </a>`
+    </a>
+    (See edits).`
     },
     css: {
       fontSize: "1em",
