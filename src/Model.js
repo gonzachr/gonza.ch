@@ -4,7 +4,7 @@ import { a, useSpring, config, useChain } from "react-spring/three";
 import { Math as ThreeMath } from "three";
 import { useRender } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Views, TOGGLE_LOADING } from "./redux/actions";
+import { VIEW_ABOUT_ME, TOGGLE_LOADING } from "./redux/actions";
 import delay from "delay";
 import store from "./redux";
 
@@ -35,7 +35,6 @@ function Model({
   const height = window.innerHeight / 2;
   const { scene } = resource.read("scene.gltf");
   let theta = 1;
-  const { VIEW_ABOUT_ME } = Views;
   const springRef = useRef();
   const aboutMe = currentView === VIEW_ABOUT_ME;
 
