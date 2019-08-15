@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { unstable_createResource as createResource } from "./react-cache";
 import { a, useSpring, config, useChain } from "react-spring/three";
 import { Math as ThreeMath } from "three";
 import { useRender } from "react-three-fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Views, toggleLoading } from "./redux/actions";
+import { Views, TOGGLE_LOADING } from "./redux/actions";
 import delay from "delay";
 import store from "./redux";
 
@@ -15,21 +15,20 @@ const resource = createResource(
     new Promise(async res => {
       return (
         await delay(2500),
-        store.dispatch(toggleLoading()),
+        store.dispatch({ type: TOGGLE_LOADING }),
         new GLTFLoader().load(path + file, res)
       );
     })
 );
 
 function Model({
-  mouse,
   top,
   currentView,
   currentRef,
+  mouse,
   setSpringRef,
   ...other
 }) {
-  const [currentRotation, setCurrentRotation] = useState([0, -3.2, 0]);
   const [positionX, setPositionX] = useState(0);
   const file = "scene.gltf";
   const tempRef = useRef();
@@ -45,24 +44,17 @@ function Model({
     from: {
       opacity: 0,
       position: [0, positionX, 0],
-      rotation: currentRotation
+      rotation: [...mouse.current, 0]
     },
     to: {
       opacity: 1,
       position:
         currentView === VIEW_ABOUT_ME ? [-2, positionX, 2] : [0, positionX, 0],
-      rotation: currentView === VIEW_ABOUT_ME ? [0, -2.5, 0] : currentRotation
+      rotation:
+        currentView === VIEW_ABOUT_ME ? [0, -3.2, 0] : [...mouse.current, 0]
     }
   });
 
-  useEffect(() => {
-    const [x, y] = mouse;
-    const rotX = ThreeMath.mapLinear(x, 0, width, -3.15, -2);
-    const rotY = ThreeMath.mapLinear(y, 0, height, 0, 0.5);
-
-    setSpringRef(springRef);
-    setCurrentRotation([rotY, rotX, 0]);
-  }, [mouse, width, height, currentView, setSpringRef]);
   const ref = currentRef.transRef ? currentRef.transRef : tempRef;
 
   useChain(
@@ -87,10 +79,12 @@ function Model({
       {...rest}
       object={scene}
       scale={[0.8, 0.8, 0.8]}
-      rotation={rotation}
+      rotation={rotation.interpolate((x, y, z) => [
+        ThreeMath.mapLinear(y, 0, height, 0, 0.5),
+        ThreeMath.mapLinear(x, 0, width, -3.15, -2),
+        z
+      ])}
       position={position}
-      transparent
-      opacity={opacity}
     />
   );
 }

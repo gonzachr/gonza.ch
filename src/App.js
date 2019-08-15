@@ -1,15 +1,10 @@
-import React, { useCallback, useState, useEffect, useRef } from "react";
-// import { useSpring } from "react-spring/three";
-// import { Math as ThreeMath } from "three";
+import React, { useCallback, useRef } from "react";
 import Scene from "./Scene";
 import Header from "./Header";
-import { Provider } from "react-redux";
-import store from "./redux";
 import AboutMe from "./AboutMe";
 import github from "./assets/github.png";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { animated, useSpring } from "react-spring";
+import { useSelector } from "react-redux";
 
 const Link = styled.a`
   text-decoration: none;
@@ -25,26 +20,17 @@ const GitHub = styled.img`
   padding: 1.3em;
 `;
 
-const Loading = styled.p`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  font-size: 3rem;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
-`;
-
 const GithubLink = () => (
   <Link href="https://github.com/gonzarodriguezt" target="_blank">
     <GitHub src={github} />
   </Link>
 );
 
-const App = ({ loadingStatus }) => {
-  const [realMouse, setRealMouse] = useState([0, 0]);
+const App = () => {
+  const loadingStatus = useSelector(state => state.loadingStatus);
+  const realMouse = useRef([0, 0]);
   const onMouseMove = useCallback(({ clientX: x, clientY: y }) => {
-    setRealMouse([x - window.innerWidth / 2, y - window.innerHeight / 2]);
+    realMouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2];
   }, []);
 
   return (
@@ -61,6 +47,4 @@ const App = ({ loadingStatus }) => {
   );
 };
 
-const mapStateToProps = ({ loadingStatus }) => ({ loadingStatus });
-
-export default connect(mapStateToProps)(App);
+export default App;
