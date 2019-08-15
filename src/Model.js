@@ -30,11 +30,10 @@ function Model({
   ...other
 }) {
   const [positionX, setPositionX] = useState(0);
-  const file = "scene.gltf";
   const tempRef = useRef();
   const width = window.innerWidth / 2;
   const height = window.innerHeight / 2;
-  const { scene } = resource.read(file);
+  const { scene } = resource.read("scene.gltf");
   let theta = 1;
   const { VIEW_ABOUT_ME } = Views;
   const springRef = useRef();
@@ -51,7 +50,7 @@ function Model({
       position:
         currentView === VIEW_ABOUT_ME ? [-2, positionX, 2] : [0, positionX, 0],
       rotation:
-        currentView === VIEW_ABOUT_ME ? [0, -3.2, 0] : [...mouse.current, 0]
+        currentView === VIEW_ABOUT_ME ? [420, 0, 0] : [...mouse.current, 0]
     }
   });
 
