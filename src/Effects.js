@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useThree, useRender } from "react-three-fiber";
 import { a } from "react-spring/three";
 
-const Effects = React.memo(({ loadingStatus, factor }) => {
+const Effects = React.memo(({ loading, factor }) => {
   const pixelRatio = window.devicePixelRatio;
   const { gl, scene, camera, size } = useThree();
   const composer = useRef();
@@ -12,7 +12,7 @@ const Effects = React.memo(({ loadingStatus, factor }) => {
       size.width * pixelRatio,
       size.height * pixelRatio
     );
-  }, [size, pixelRatio, loadingStatus]);
+  }, [size, pixelRatio, loading]);
   useRender(() => {
     return composer.current.render();
   }, true);

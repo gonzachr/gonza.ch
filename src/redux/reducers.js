@@ -29,7 +29,7 @@ const currentRef = (state = {}, action) => {
   }
 };
 
-const loadingStatus = (state = true, action) => {
+const loading = (state = true, action) => {
   switch (action.type) {
     case TOGGLE_LOADING:
       return !state;
@@ -42,5 +42,5 @@ const loadingStatus = (state = true, action) => {
 export default combineReducers({
   currentView,
   currentRef,
-  loadingStatus
+  loading
 });

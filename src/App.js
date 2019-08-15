@@ -27,7 +27,7 @@ const GithubLink = () => (
 );
 
 const App = () => {
-  const loadingStatus = useSelector(state => state.loadingStatus);
+  const loading = useSelector(state => state.loading);
   const realMouse = useRef([0, 0]);
   const onMouseMove = useCallback(({ clientX: x, clientY: y }) => {
     realMouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -35,8 +35,8 @@ const App = () => {
 
   return (
     <>
-      <Scene mouse={realMouse} factor={loadingStatus ? 1 : 0} />
-      {!loadingStatus && (
+      <Scene mouse={realMouse} factor={loading ? 1 : 0} />
+      {!loading && (
         <div className="container" onMouseMove={onMouseMove}>
           <Header />
           <AboutMe />

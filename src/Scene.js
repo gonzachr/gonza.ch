@@ -19,14 +19,14 @@ const Scene = ({
   mouse,
   currentRef,
   currentView,
-  loadingStatus,
+  loading,
   setSpringRef
 }) => {
   return (
     <Canvas className="canvas">
       <spotLight color={0xffffff} position={[10, 4, 0]} />
       <directionalLight color={0xffffff} intensity={1} position={[-1, 2, 4]} />
-      <Effects loadingStatus={loadingStatus} factor={factor} />
+      <Effects loading={loading} factor={factor} />
       <Suspense fallback={<Box />}>
         <Model
           mouse={mouse}
@@ -35,15 +35,15 @@ const Scene = ({
           setSpringRef={setSpringRef}
         />
       </Suspense>
-      {!loadingStatus && <Box currentView={currentView} />}
+      {!loading && <Box currentView={currentView} />}
     </Canvas>
   );
 };
 
-const mapStateToProps = ({ currentView, currentRef, loadingStatus }) => ({
+const mapStateToProps = ({ currentView, currentRef, loading }) => ({
   currentRef,
   currentView,
-  loadingStatus
+  loading
 });
 
 export default connect(mapStateToProps)(Scene);
