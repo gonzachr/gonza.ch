@@ -42,7 +42,7 @@ const Header = React.memo(({ setView }) => {
   return (
     <Nav>
       <Logo
-        onClick={() => dispatch({ type: SET_VIEW, payload: VIEW_HOME })}
+        onClick={() => dispatch({ type: SET_VIEW, view: VIEW_HOME })}
         className="logo"
       >
         gr
