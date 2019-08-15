@@ -28,13 +28,16 @@ const AboutMe = () => {
 
   return (
     <div className="about-me">
-      {transitions.map(({ item, key, props }) => (
-        <animated.p
-          key={key}
-          style={{ ...props, ...item.css }}
-          dangerouslySetInnerHTML={item.text}
-        />
-      ))}
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.p
+              key={key}
+              style={{ ...props, ...item.css }}
+              dangerouslySetInnerHTML={item.text}
+            />
+          )
+      )}
     </div>
   );
 };
