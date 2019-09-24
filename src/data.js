@@ -12,21 +12,7 @@ export default [
   {
     key: "Content",
     text: {
-      __html: `I'm a skilled JavaScript developer with a deep understanding of the latest internet technologies, a keen 
-    <a
-      target="blank"
-      
-      href="https://github.com/FundacionParaguaya/stoplight-web/pull/406"
-    >
-      engineering intuition
-    </a>, and outstanding 
-    <a
-      target="blank"
-      href="https://github.com/FundacionParaguaya/stoplight-web/pull/430"
-    >
-    communication skills.
-    </a>
-    (See edits).`
+      __html: `I'm just a guy who likes learning, and the idea of making something useful for the people i share this world with :)`
     },
     css: {
       fontSize: "1em",
@@ -34,83 +20,6 @@ export default [
       lineHeight: 2,
       marginBottom: "1em"
     }
-  },
-  {
-    key: "Aditionally",
-    text: {
-      __html: `Aditionally, i have experience building
-    <a
-      target="blank"
-      href="https://github.com/FundacionParaguaya/stoplight-web/graphs/contributors"
-    >
-      complex applications
-    </a>, solid knowledge of modern 
-    <a
-      target="blank"
-      href="https://github.com/drcmda/react-three-fiber/pull/157"
-    >
-    JavaScript and React
-    </a>
-     and 
-    <a
-      target="blank"
-      href="https://github.com/gonzarodriguezt/todoist-clone/tree/master/src/redux"
-    >
-    Redux
-    </a>
-     just as a bonus. I also came to have some experience 
-    <a
-      target="blank"
-      href="https://github.com/gonzarodriguezt/todoist-clone/tree/master/src/__tests__"
-    >
-    writing tests
-    </a>
-    . Along with ability to use and 
-    <a
-      target="blank"
-      href="https://github.com/gonzarodriguezt/create-dev-server"
-    >
-    customize tools 
-    </a>
-    to streamline development and build processes.`
-    },
-    css: {
-      fontSize: "1em",
-      fontWeight: 300,
-      lineHeight: 2,
-      marginBottom: "1em"
-    }
-  },
-  {
-    key: "Coincidentally",
-    text: {
-      __html: `I coincidentally count with experience working in a 
-      <a
-      target="blank"
-      href="https://github.com/FundacionParaguaya"
-      >
-      remote team
-      </a> 
-      and fluency writing and speaking in English. With no intention to leave behind my 
-      <a
-        target="blank"
-        href="https://github.com/gonzarodriguezt/gonza.ch/graphs/contributors"
-      >
-      proven ability
-      </a> 
-      to work autonomously and stay self-motivated.`
-    },
-    css: {
-      fontSize: "1em",
-      fontWeight: 300,
-      lineHeight: 2,
-      marginBottom: "2em"
-    }
-  },
-  {
-    key: "Projects",
-    text: { __html: "Some Projects" },
-    css: { fontSize: "1.2em", fontWeight: 600, marginBottom: "1.5em" }
   },
   {
     key: "Current Interests",
