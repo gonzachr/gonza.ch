@@ -54,7 +54,7 @@ export default [
      and 
     <a
       target="blank"
-      href="https://github.com/gonzarodriguezt/todoist-clone/tree/master/src/redux"
+      href="https://github.com/gonzarodriguezt/gonza.ch/blob/master/src/redux/reducers.js"
     >
     Redux
     </a>
