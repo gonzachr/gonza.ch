@@ -1,24 +1,26 @@
 export default [
   {
-    key: "Intro",
-    text: { __html: "hey" },
-    css: { fontSize: "1em", fontWeight: 600, marginBottom: "1em" }
-  },
-  {
-    key: "Name",
-    text: { __html: "im just a guy" },
-    css: { fontSize: "1em", fontWeight: 600, marginBottom: "1em" }
-  },
-  {
-    key: "Content",
+    key: "intro",
     text: {
-      __html: `living, or at least trying`  
+      __html: `hey`  
     },
     css: {
       fontSize: "1em",
       fontWeight: 300,
       lineHeight: 2,
-      marginBottom: "1em"
+      marginBottom: ".5em"
+    }
+  },
+  {
+    key: "pasaje",
+    text: {
+      __html: `didn't saw u there`  
+    },
+    css: {
+      fontSize: "1em",
+      fontWeight: 300,
+      lineHeight: 2,
+      marginBottom: ".5em"
     }
   },
   {
@@ -30,7 +32,7 @@ export default [
       fontSize: "1em",
       fontWeight: 300,
       lineHeight: 2,
-      marginBottom: "1em"
+      marginBottom: ".5em"
     }
   },
   {
@@ -42,7 +44,7 @@ export default [
       fontSize: "1em",
       fontWeight: 300,
       lineHeight: 2,
-      marginBottom: "1em"
+      marginBottom: ".5em"
     }
   },
 ];
