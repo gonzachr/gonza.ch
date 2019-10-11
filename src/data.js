@@ -12,7 +12,31 @@ export default [
   {
     key: "Content",
     text: {
-      __html: `trying to live a good life, fighting with some internal stuff along the way, and i'm not talking about call stacks nor rams, hope ur doing okay, love u, stranger`
+      __html: `living, or at least trying`  
+    },
+    css: {
+      fontSize: "1em",
+      fontWeight: 300,
+      lineHeight: 2,
+      marginBottom: "1em"
+    }
+  },
+  {
+    key: "Content2",
+    text: {
+      __html: `hope ur doing okay`
+    },
+    css: {
+      fontSize: "1em",
+      fontWeight: 300,
+      lineHeight: 2,
+      marginBottom: "1em"
+    }
+  },
+  {
+    key: "Content2",
+    text: {
+      __html: `love u, stranger`
     },
     css: {
       fontSize: "1em",
