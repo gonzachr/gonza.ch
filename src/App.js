@@ -21,7 +21,7 @@ const GitHub = styled.img`
 `;
 
 const GithubLink = () => (
-  <Link href="https://github.com/gonzarodriguezt" target="_blank">
+  <Link href="https://github.com/grdnrt" target="_blank">
     <GitHub src={github} />
   </Link>
 );
