@@ -48,13 +48,14 @@ const Header = React.memo(({ setView }) => {
         gr
       </Logo>
       <div>
-        <Item onClick={() => dispatch({ type: SET_VIEW, view: VIEW_ABOUT_ME })}>
-          about me
-        </Item>
         <Link href="mailto:gonzarodriguezt@icloud.com">contact</Link>
       </div>
     </Nav>
   );
 });
+
+//<Item onClick={() => dispatch({ type: SET_VIEW, view: VIEW_ABOUT_ME })}>
+//about me
+//</Item>
 
 export default Header;
