@@ -48,7 +48,7 @@ const Header = React.memo(({ setView }) => {
         gr
       </Logo>
       <div>
-        <Link href="mailto:gonzarodriguezt@icloud.com">contact</Link>
+        <Link href="mailto:yo@gonza.ch">contact</Link>
       </div>
     </Nav>
   );
