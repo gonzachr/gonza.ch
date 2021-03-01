@@ -13,7 +13,7 @@
     "react-three-fiber": "^2.2.14",
     "redux": "^4.0.4",
     "styled-components": "^4.3.2",
-    "three": "^0.107.0"
+    "three": "^0.125.0"
   },
   "scripts": {
     "start": "react-scripts start",
